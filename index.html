@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パワー測定ラボ — 荷物を5 m運ぼう</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><p class="eyebrow">PHYSICS PLAYGROUND / 05</p><h1>パワー測定ラボ</h1><p>荷物を5 m先まで運ぶ時間から、平均パワーを求めます。</p></header>
+<main>
+  <section class="panel intro"><div><h2>荷物を5 m先まで運ぼう</h2><p>荷物のイラストをマウスやタッチで右へドラッグしてください。動かし始めた瞬間に計測を開始し、5 m地点に着くと止まります。</p></div><div class="fixed-values"><span>加える力</span><strong>50 N</strong><span>移動距離</span><strong>5.0 m</strong></div></section>
+  <section class="panel activity">
+    <div class="scene-wrap"><svg id="scene" viewBox="0 0 900 350" role="img" aria-label="ドラッグ可能な荷物を5メートル運ぶ図">
+      <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#2764ad"/></marker></defs>
+      <line x1="65" y1="275" x2="840" y2="275" class="floor"/>
+      <line x1="170" y1="62" x2="170" y2="278" class="marker"/><line x1="770" y1="62" x2="770" y2="278" class="marker"/>
+      <line x1="170" y1="52" x2="770" y2="52" class="distance"/><text x="470" y="40" text-anchor="middle" class="dist-label">5 m</text>
+      <text x="170" y="302" text-anchor="middle" class="small-label">スタート</text><text x="770" y="302" text-anchor="middle" class="small-label">ゴール</text>
+      <g id="mover" class="draggable" transform="translate(-291 0)" tabindex="0" role="slider" aria-label="荷物の位置。右へドラッグして運びます。">
+        <g class="cart"><rect x="203" y="194" width="176" height="61" rx="5"/><rect x="220" y="153" width="142" height="41" rx="3"/><line x1="203" y1="194" x2="195" y2="165"/><circle cx="240" cy="265" r="15"/><circle cx="343" cy="265" r="15"/><circle cx="240" cy="265" r="5" class="hub"/><circle cx="343" cy="265" r="5" class="hub"/></g>
+        <line x1="220" y1="178" x2="350" y2="178" class="force-arrow" marker-end="url(#arrow)"/><text x="285" y="140" text-anchor="middle" class="force-label">50 N</text>
+      </g>
+      <text id="sceneStatus" x="470" y="333" text-anchor="middle" class="scene-status">準備完了</text>
+    </svg></div>
+    <div class="progress-row"><span>移動距離</span><div class="track"><div id="progress" class="progress"></div></div><strong id="distance">0.00 / 5.00 m</strong></div>
+    <div class="timer-row"><span>経過時間</span><strong id="timer">0.00</strong><span>s</span></div>
+    <div class="buttons"><button id="reset" class="secondary" disabled>もう一度</button></div>
+  </section>
+  <section class="panel result" aria-live="polite"><h2>測定結果</h2><div class="result-grid"><div><span>仕事</span><strong id="work">—</strong><small>J</small></div><div><span>平均パワー</span><strong id="power">—</strong><small>W</small></div><div><span>到達時間</span><strong id="elapsed">—</strong><small>s</small></div></div><p class="equation">仕事 = 力 × 距離 = 50 N × 5 m = <b>250 J</b><br>平均パワー = 仕事 ÷ 時間</p></section>
+  <details class="panel"><summary>計算の前提</summary><p>荷物に進行方向へ一定の力50 Nが5 mの全区間で加わると仮定します。仕事は250 J、平均パワーは250 Jを移動にかかった時間で割って求めます。アニメーションの速さは操作体験用で、物理的な加速度や摩擦を再現するものではありません。</p></details>
+</main><footer>力学学習シリーズ / 仕事率（パワー）</footer><script src="app.js"></script>
+</body></html>
