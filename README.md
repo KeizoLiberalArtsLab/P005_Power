@@ -2,6 +2,10 @@
 
 荷物のイラストをドラッグして5 m運ぶ時間を測り、仕事率（平均パワー）を求めるブラウザアプリです。
 
+## 配布・起動用URL
+
+[https://keizoliberalartslab.github.io/P005_Power/](https://keizoliberalartslab.github.io/P005_Power/)
+
 ## 起動
 
 `index.html` をブラウザで開いてください。インストールや外部ライブラリは不要です。
